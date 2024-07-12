@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let decay = {container: document.getElementById('decay'), value: 0.1};		// learning rate decay
     let min_error = {container: document.getElementById('min-error'), value: 1e-12};	// minimum error during training
     let max_epoch = {container: document.getElementById('max-epoch'), value: 500};	// maximum number of epochs before terminating training
+
     let loss = 'MSE';
 
     let network_button = document.getElementById('net-create');
@@ -44,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	const training_div = document.getElementById('training-details');
 	training_div.innerHTML = `
 	    <h2>Training dataset</h2>
-	    <label for="inputs">Select a input training data:</label>
+	    <label for="inputs">Select an input training data:</label>
 	    <input type="file" id="inputs" name="inputs" accept=".csv" />
 	    <br>
-	    <label for="outputs">Select a output training data:</label>
+	    <label for="outputs">Select an output training data:</label>
 	    <input type="file" id="outputs" name="outputs" accept=".csv" />
 	`;
 
@@ -230,8 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	    for (let j = 0; j < table.rows[0].cells.length; j++) {
 		let cell = row.cells[j];
 		if (cell.id === 'white-cell') {
-		    white_per_row[i]++;
-		    white_per_col[j]++;
+		    white_per_row[i] += 1/5;
+		    white_per_col[j] += 1/7;
 		}
 	    }
 	}
