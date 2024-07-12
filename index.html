@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Character Reader</title>
+    <link rel="stylesheet" href="utils/styles.css">
+    <link rel="icon" href="data:,">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.2/math.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script type="module" src="utils/ann.js"></script>
+    <script type="module" src="utils/index.js" defer></script>
+</head>
+<body>
+    <h1>Optical Character Reader using Artificial Neural Network</h1>
+    <div id="image-details">
+	<h2>Image details</h2>
+	<label for="rows">Number of image pixel rows:</label>
+	<input type="number" id="rows" name="rows" min="1" value="7">
+	<br>
+	<label for="cols">Number of image pixel columns:</label>
+	<input type="number" id="cols" name="cols" min="1" value="5">
+    </div>
+    <div id="network-details">
+	<h2>Neural network details</h2>
+	<label for="hlayers">Number of hidden layers:</label>
+	<input type="number" id="hlayers" name="hlayers" min="1" max="10" value="2">
+        <br>
+	<label for="lrate">Value of learning rate:</label>
+	<input type="number" id="lrate" name="lrate" min="0" max="1" value="0.001" step="any">
+	<br>
+	<label for="decay">Value of learning decay rate:</label>
+	<input type="number" id="decay" name="decay" min="0" max="1" value="0.1" step="any">
+	<br>
+	<label for="min-error">Minimum error for training</label>
+	<input type="number" id="min-error" name="min-error" min="0" max="1" value="0.000000000000001" step="any">
+	<br>
+	<label for="max-epoch">Maximum number of epoch for training</label>
+        <input type="number" id="max-epoch" name="max-epoch" min="1" value="10000">
+    </div>
+    <button type="button" id="net-create">Create network</button>
+    <div id="training-details">
+	<!--<h2>Training dataset</h2>
+	<label for="inputs">Select a input training data:</label>
+	<input type="file" id="inputs" name="inputs" accept=".csv" />
+        <br>
+	<label for="outputs">Select a output training data:</label>
+	<input type="file" id="outputs" name="outputs" accept=".csv" />
+	-->
+    </div>
+    <div id="training-results"></div>
+    <div id="input-details"></div>
+    <div id="output-details"></div>
+</body>
+</html>
